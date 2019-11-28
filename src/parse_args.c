@@ -6,13 +6,13 @@
 /*   By: ebatchas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 11:20:43 by ebatchas          #+#    #+#             */
-/*   Updated: 2019/11/12 22:48:32 by ebatchas         ###   ########.fr       */
+/*   Updated: 2019/11/28 22:08:39 by ebatchas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar.h"
 
-void	ft_parse_args(t_vm *vm, int ac, char *av[])
+void	ft_parse_args(t_vm_arg *vm, int ac, char *av[])
 {
 	int			i;
 	int			j;

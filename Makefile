@@ -6,7 +6,7 @@
 #    By: ebatchas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/10 18:08:12 by ebatchas          #+#    #+#              #
-#    Updated: 2019/11/25 19:56:42 by ebatchas         ###   ########.fr        #
+#    Updated: 2019/11/28 22:31:40 by ebatchas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ DONE_COLOR=\x1b[34;03m
 EOC=\033[0m
 
 SRCS_NO_PREFIX = main.c players.c parse_args.c parse_utils.c print.c read.c\
-				 read_utils.c core.c arena.c vm.c memory.c carriage.c op.c
+				 read_utils.c core.c arena.c vm.c memory.c carriage.c op.c utils.c\
+				 game.c
 
 INCS_NO_PREFIX  = corewar.h op.h
 

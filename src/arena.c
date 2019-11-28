@@ -6,13 +6,13 @@
 /*   By: ebatchas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 22:50:02 by ebatchas          #+#    #+#             */
-/*   Updated: 2019/11/25 17:12:20 by ebatchas         ###   ########.fr       */
+/*   Updated: 2019/11/28 22:24:38 by ebatchas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar.h"
 
-void		ft_arena_print(t_vm *vm)
+void		ft_arena_print(t_game *game)
 {
 	int		i;
 	int		j;
@@ -23,19 +23,19 @@ void		ft_arena_print(t_vm *vm)
 		j = -1;
 		while (++j < 64)
 		{
-			printf("%x ", vm->memory[j + i * 64]);
+			printf("%x ", game->memory[j + i * 64]);
 		}
 		printf("\n");
 	}
 }
 
-void		ft_arena_debug(t_vm *vm)
+void		ft_arena_debug(t_game *game)
 {
-	vm->nb_players = ft_players_length(vm->players);
-	printf("\nPosition : %d : %x\n", 0, ft_get_memory_byte(vm->memory, 0));
+	game->nb_players = ft_players_length(game->players);
+	printf("\nPosition : %d : %x\n", 0, ft_get_memory_byte(game->memory, 0));
 }
 
-void		ft_arena_init(t_vm	*vm)
+void		ft_arena_init(t_game	*game)
 {
 	int			offset;
 	int			delta;
@@ -44,15 +44,15 @@ void		ft_arena_init(t_vm	*vm)
 	t_player	*player;
 
 	offset = 0;
-	vm->nb_players = ft_players_length(vm->players);
-	delta = MEM_SIZE / vm->nb_players;
+	game->nb_players = ft_players_length(game->players);
+	delta = MEM_SIZE / game->nb_players;
 	i = -1;
-	player = vm->players;
-	while (++i < vm->nb_players)
+	player = game->players;
+	while (++i < game->nb_players)
 	{
 		j = -1;
 		while (++j < (int )player->exec->head.prog_size)
-			vm->memory[i * delta + j] = player->exec->code[j];
+			game->memory[i * delta + j] = player->exec->code[j];
 		player = player->next;
 	}
 }

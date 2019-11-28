@@ -6,7 +6,7 @@
 /*   By: ebatchas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:31:27 by ebatchas          #+#    #+#             */
-/*   Updated: 2019/11/23 16:36:07 by ebatchas         ###   ########.fr       */
+/*   Updated: 2019/11/28 22:20:24 by ebatchas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int		ft_read(t_vm	*vm)
 {
 	t_player	*player;
 
-	if (!vm->players)
+	if (!vm->args.players)
 		return (-1);
-	player = vm->players;
+	player = vm->args.players;
 	while (player)
 	{
 		if (!(player->exec = ft_read_code(player->name)))
